@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from './component/header';
+import Form from './component/form';
+import { List } from "./component/List";
+import { Footer } from "./component/Footer";
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  function handleitems(item) {
+    setItems(items => [...items, item])
+  }
+  function handleRemoveItems(id) {
+    setItems(items => items.filter((item) => item.id !== id))
+  }
+  function handleUpdateItems(id) {
+    setItems(items => items.map((item) => item.id === id ? { ...item, packed: !item.packed } : item))
+  }
+  function clearALL() {
+    setItems([])
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    < >
+      <Header />
+      <Form onAddItems={handleitems} />
+      <List items={items} onRemoveItems={handleRemoveItems} onUpdateValue={handleUpdateItems} onClearAll={clearALL} />
+      <Footer items={items} />
+    </>
   );
 }
-
 export default App;
