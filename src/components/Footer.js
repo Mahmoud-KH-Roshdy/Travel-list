@@ -1,4 +1,6 @@
-export function Footer({ items }) {
+import { useItems } from "../context/ItemContext";
+export function Footer() {
+    const { items } = useItems()
     const num = items.length;
     const numPacked = items.filter(item => item.packed).length;
     const percentage = Math.round((numPacked / num) * 100);

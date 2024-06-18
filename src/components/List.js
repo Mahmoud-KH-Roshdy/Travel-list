@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Item } from "./Item";
+import { useItems } from "../context/ItemContext";
 
-export function List({ items, onRemoveItems, onUpdateValue, onClearAll }) {
+export function List() {
     const [sortBy, setSortBy] = useState("input");
+    const { items, onClearAll } = useItems()
     let sortedItems;
-
 
     if (sortBy === "input") sortedItems = items;
 
@@ -16,9 +17,9 @@ export function List({ items, onRemoveItems, onUpdateValue, onClearAll }) {
     if (sortBy === "packed") sortedItems = items.slice().sort((a, b) => Number(a.packed) - Number(b.packed));
     return (
         <div className="py-14 flex flex-col justify-between gap-14 relative">
-            <ul className=" grid  grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 items-center bg-slate-950 relative z-50">
+            <ul className=" grid  grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 items-center bg-slate-950 relative z-50  overflow-auto max-h-[400px] ">
                 {sortedItems.map((item) => (
-                    <Item item={item} key={item.id} onRemoveItems={onRemoveItems} onUpdateValue={onUpdateValue} />
+                    <Item item={item} key={item.id}/>
                 ))}
             </ul>
 

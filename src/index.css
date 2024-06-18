@@ -15,6 +15,23 @@
 }
 @layer base {
   body {
-    @apply dark:bg-slate-950 bg-white text-black w-full h-screen  dark:text-white
+    @apply dark:bg-slate-950 bg-white text-black w-full h-screen  dark:text-white dark:selection:bg-white 
+  }
+}
+@layer utilities {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+
+
+  /* Track */::-webkit-scrollbar-track {
+    background: #020617;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border: 2px solid #374151;
   }
 }

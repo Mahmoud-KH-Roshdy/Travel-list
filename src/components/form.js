@@ -1,7 +1,9 @@
 import { useState } from "react";
-export default function Form({ onAddItems }) {
+import { useItems } from "../context/ItemContext";
+export default function Form() {
     const [description, setDescription] = useState("");
     const [quantity, setQuantity] = useState(1);
+    const { onAddItems } = useItems()
     function handleSumbit(e) {
         e.preventDefault();
         if (!description) return;

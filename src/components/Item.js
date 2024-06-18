@@ -1,5 +1,6 @@
-
-export function Item({ item, onRemoveItems, onUpdateValue }) {
+import { useItems } from "../context/ItemContext";
+export function Item({item}) {
+    const { onRemoveItems, onUpdateValue } = useItems()
     return (
         <>
             <li className=" flex items-center justify-center">
