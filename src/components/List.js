@@ -18,7 +18,7 @@ export function List() {
     if (sortBy === "packed") sortedItems = items.slice().sort((a, b) => Number(a.packed) - Number(b.packed));
     return (
         <div className="py-14 flex flex-col justify-between gap-14 relative">
-            <ul className=" grid  grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 items-center  relative z-50  overflow-auto max-h-[300px] text-black dark:text-[#fff]">
+            <ul className=" grid  grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 items-center  relative z-50  overflow-auto max-h-[300px] text-black dark:text-[#fff] max-[699px]:max-h-[115px]">
                 {sortedItems.map((item) => (
                     <Item item={item} key={item.id}/>
                 ))}
