@@ -4,18 +4,18 @@
 
 @layer components{
     .select{
-        @apply mx-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-slate-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+        @apply  cursor-pointer  mx-4 bg-gray-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-slate-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
     }
     .check{
       @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ;
     }
     .btn{
-      @apply py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
+      @apply py-2.5 px-5 me-2 mb-2 text-sm  text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 border-none;
     }
 }
 @layer base {
   body {
-    @apply dark:bg-slate-950 bg-white text-black w-full h-screen  dark:text-white 
+    @apply  dark:bg-[#121212]  bg-white text-black w-full h-screen  dark:text-[#fff] font-cairo
   }
 }
 @layer utilities {
@@ -25,13 +25,10 @@
     height: 8px;
   }
 
-
-
   /* Track */::-webkit-scrollbar-track {
-    background: #020617;
+    background: #1F1F1F;
   }
   ::-webkit-scrollbar-thumb {
-    background: #6b7280;
-    border: 2px solid #374151;
+    background: #121212;
   }
 }

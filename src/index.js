@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { ItemContext } from './context/ItemContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ItemContext>
+    <App/>
+    </ItemContext>
   </React.StrictMode>
 );
 

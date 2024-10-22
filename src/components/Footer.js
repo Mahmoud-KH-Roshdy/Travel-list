@@ -5,9 +5,13 @@ export function Footer() {
     const numPacked = items.filter(item => item.packed).length;
     const percentage = Math.round((numPacked / num) * 100);
     return (
-        <footer className="text-center  px-[10px] py-[30px]  z-50  left-0 bottom-0 w-full ">
-            {percentage === 100 ? "You're ready to go now!!" :
-                <p className=""> You have {num} items in your todod list , and you already do  {numPacked} ({isNaN(percentage) ? "0" : percentage}%)</p>}
+        <footer className="text-center  flex place-content-center">
+
+            <p className="font-bold capitalize text-[20px] absolute bottom-0 py-14">
+                {percentage !== 100 ?  
+                ` You have ${num} items in your todod list , and you already do  ${numPacked} (${isNaN(percentage) ? "0" : percentage}%)` 
+                : "You're do everything in your todo list!!" }
+                </p>
         </footer>
     );
 }

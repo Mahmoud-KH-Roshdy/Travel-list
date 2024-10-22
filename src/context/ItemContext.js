@@ -1,9 +1,22 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import useLocalStorageState from "../hook/useLocalStorge";
 
 const ContextItem = createContext()
 function ItemContext({ children }) {
-    const [items, setItems] = useLocalStorageState([],"item");
+    const [items, setItems] = useLocalStorageState([], "item");
+    const [theme, setTheme] = useState('dark');
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    };
+
     function handleitems(item) {
         setItems(items => [...items, item])
     }
@@ -24,6 +37,8 @@ function ItemContext({ children }) {
                 onUpdateValue: handleUpdateItems,
                 onClearAll: clearALL,
                 items,
+                theme,
+                toggleTheme,
             }
         }>
             {children}

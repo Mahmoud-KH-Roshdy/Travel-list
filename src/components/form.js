@@ -20,14 +20,14 @@ export default function Form() {
                 <div className="flex">
                     <input
                         type="text"
-                        className=" focus:outline  dark:bg-slate-800 dark:text-white  max-w-full p-[10px] flex-1 rounded-lg"
+                        className=" focus:outline  dark:bg-darkBg dark:text-white  max-w-full p-[10px] flex-1 rounded-lg bg-[#f4f4f4]  text-black"
                         placeholder="item..."
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
                     <button
-                        className="dark:bg-slate-800 text-white hover:bg-slate-900 transition-all duration-700  p-[10px] rounded-md ml-[10px] cursor-pointer ">
-                        ADD
+                        className="dark:bg-darkBg dark:text-white bg-[#f4f4f4]  text-black  hover:bg-white transition-all duration-700  p-[10px] rounded-md ml-[10px] cursor-pointer ">
+                        Add
                     </button>
                 </div>
             </form>
